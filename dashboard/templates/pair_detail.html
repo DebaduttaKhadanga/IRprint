@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IRprint Pair</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <h1><a href="/">IRprint</a></h1>
+  <p><a href="/">← back to dashboard</a></p>
+</header>
+<main>
+
+  <section>
+    <h2>{{ pair.file_a }} : {{ pair.func_a }} &nbsp;↔&nbsp; {{ pair.file_b }} : {{ pair.func_b }}</h2>
+    <div class="metrics">
+      <div class="metric"><div class="label">Hybrid score</div><div class="value">{{ "%.3f"|format(pair.hybrid_score) }}</div></div>
+      <div class="metric"><div class="label">Dice (k={{ pair.k }})</div><div class="value">{{ "%.3f"|format(pair.dice) }}</div></div>
+      <div class="metric"><div class="label">Jaccard</div><div class="value">{{ "%.3f"|format(pair.jaccard) }}</div></div>
+      <div class="metric"><div class="label">Cosine</div><div class="value">{{ "%.3f"|format(pair.cosine) }}</div></div>
+      <div class="metric"><div class="label">CFG A (blocks, edges, loops)</div><div class="value">{{ pair.cfg_a|join(", ") }}</div></div>
+      <div class="metric"><div class="label">CFG B (blocks, edges, loops)</div><div class="value">{{ pair.cfg_b|join(", ") }}</div></div>
+      <div class="metric"><div class="label">CFG match (±25%)</div><div class="value">{{ "yes" if pair.cfg_match else "no" }}</div></div>
+      <div class="metric"><div class="label">Flagged</div><div class="value">{{ "yes" if pair.flagged else "no" }}</div></div>
+    </div>
+    <p class="muted">Hybrid = Dice × 1.15 (capped at 1.0) when CFG signatures match, Dice × 0.85 otherwise.</p>
+  </section>
+
+  <!-- FUNCTIONALITY 8: instructor triage (POST /pair/{index}/verdict) -->
+  <section>
+    <h2>Instructor verdict: <span class="badge verdict">{{ pair.instructor_verdict }}</span></h2>
+    <form class="verdict-form" action="/pair/{{ pair.id }}/verdict" method="post">
+      {% for v in verdicts %}
+        <button type="submit" name="verdict" value="{{ v }}"
+                class="{{ '' if v == pair.instructor_verdict else 'secondary' }}">{{ v.replace("_", " ") }}</button>
+      {% endfor %}
+    </form>
+  </section>
+
+  <!-- FUNCTIONALITY 8: side-by-side normalized LLVM-IR diff -->
+  <section>
+    <h2>Side-by-side normalized LLVM IR</h2>
+    <p class="muted">Labels renamed to bb0, bb1 …; registers renamed to %v0, %v1 … in order of first use. Yellow rows differ, blue rows exist on one side only.</p>
+    <div class="diff">
+      <table>
+        <colgroup><col style="width:50%"><col style="width:50%"></colgroup>
+        <thead><tr><th>{{ pair.file_a }} : {{ pair.func_a }}</th><th>{{ pair.file_b }} : {{ pair.func_b }}</th></tr></thead>
+        <tbody>
+        {% for row in rows %}
+          <tr class="{{ row.tag }}"><td class="left">{{ row.left }}</td><td class="right">{{ row.right }}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+</body>
+</html>
