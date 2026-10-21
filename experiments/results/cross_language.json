@@ -1,0 +1,240 @@
+{
+  "k": {
+    "2": {
+      "token_baseline": {
+        "mean_positive": 0.4573584377907614,
+        "mean_negative": 0.2698199869451498,
+        "gap": 0.1875384508456116,
+        "top1_accuracy": 0.9,
+        "auc": 0.9727777777777777,
+        "positives": {
+          "array_sum": 0.3684,
+          "binary_search": 0.6126,
+          "bubble_sort": 0.5376,
+          "count_primes": 0.5,
+          "factorial": 0.3871,
+          "fibonacci": 0.4,
+          "gcd": 0.4231,
+          "linear_search": 0.4096,
+          "max_value": 0.4578,
+          "reverse_array": 0.4773
+        }
+      },
+      "irprint_dice": {
+        "mean_positive": 0.8287570531853653,
+        "mean_negative": 0.6432492357740298,
+        "gap": 0.18550781741133548,
+        "top1_accuracy": 0.5,
+        "auc": 0.8911111111111111,
+        "positives": {
+          "array_sum": 0.9091,
+          "binary_search": 0.6818,
+          "bubble_sort": 0.7619,
+          "count_primes": 0.8649,
+          "factorial": 1.0,
+          "fibonacci": 0.9655,
+          "gcd": 0.7857,
+          "linear_search": 0.7333,
+          "max_value": 0.8485,
+          "reverse_array": 0.7368
+        }
+      },
+      "irprint_hybrid": {
+        "mean_positive": 0.9003854107012002,
+        "mean_negative": 0.5974841212327203,
+        "gap": 0.30290128946847983,
+        "top1_accuracy": 0.7,
+        "auc": 0.9216666666666666,
+        "positives": {
+          "array_sum": 1.0,
+          "binary_search": 0.7841,
+          "bubble_sort": 0.8762,
+          "count_primes": 0.9946,
+          "factorial": 1.0,
+          "fibonacci": 1.0,
+          "gcd": 0.9036,
+          "linear_search": 0.8433,
+          "max_value": 0.9758,
+          "reverse_array": 0.6263
+        }
+      }
+    },
+    "3": {
+      "token_baseline": {
+        "mean_positive": 0.28260118824082114,
+        "mean_negative": 0.10428736003897271,
+        "gap": 0.17831382820184843,
+        "top1_accuracy": 0.9,
+        "auc": 0.9711111111111111,
+        "positives": {
+          "array_sum": 0.1818,
+          "binary_search": 0.4384,
+          "bubble_sort": 0.3802,
+          "count_primes": 0.2243,
+          "factorial": 0.1918,
+          "fibonacci": 0.2632,
+          "gcd": 0.3,
+          "linear_search": 0.1875,
+          "max_value": 0.297,
+          "reverse_array": 0.3619
+        }
+      },
+      "irprint_dice": {
+        "mean_positive": 0.6362895245666761,
+        "mean_negative": 0.406073312395513,
+        "gap": 0.23021621217116311,
+        "top1_accuracy": 0.9,
+        "auc": 0.88,
+        "positives": {
+          "array_sum": 0.7317,
+          "binary_search": 0.4375,
+          "bubble_sort": 0.5231,
+          "count_primes": 0.8302,
+          "factorial": 0.8649,
+          "fibonacci": 0.75,
+          "gcd": 0.6061,
+          "linear_search": 0.5,
+          "max_value": 0.6667,
+          "reverse_array": 0.4528
+        }
+      },
+      "irprint_hybrid": {
+        "mean_positive": 0.7181480475913001,
+        "mean_negative": 0.3803032289955508,
+        "gap": 0.33784481859574933,
+        "top1_accuracy": 0.8,
+        "auc": 0.9122222222222223,
+        "positives": {
+          "array_sum": 0.8415,
+          "binary_search": 0.5031,
+          "bubble_sort": 0.6015,
+          "count_primes": 0.9547,
+          "factorial": 0.9946,
+          "fibonacci": 0.8625,
+          "gcd": 0.697,
+          "linear_search": 0.575,
+          "max_value": 0.7667,
+          "reverse_array": 0.3849
+        }
+      }
+    },
+    "4": {
+      "token_baseline": {
+        "mean_positive": 0.21088821243447148,
+        "mean_negative": 0.03570377606772178,
+        "gap": 0.17518443636674969,
+        "top1_accuracy": 1.0,
+        "auc": 0.9705555555555555,
+        "positives": {
+          "array_sum": 0.1124,
+          "binary_search": 0.3415,
+          "bubble_sort": 0.3453,
+          "count_primes": 0.1008,
+          "factorial": 0.1053,
+          "fibonacci": 0.2093,
+          "gcd": 0.2812,
+          "linear_search": 0.0825,
+          "max_value": 0.2243,
+          "reverse_array": 0.3063
+        }
+      },
+      "irprint_dice": {
+        "mean_positive": 0.5003006063343116,
+        "mean_negative": 0.21865383827417423,
+        "gap": 0.2816467680601374,
+        "top1_accuracy": 0.8,
+        "auc": 0.9122222222222223,
+        "positives": {
+          "array_sum": 0.5581,
+          "binary_search": 0.2933,
+          "bubble_sort": 0.3059,
+          "count_primes": 0.7826,
+          "factorial": 0.7429,
+          "fibonacci": 0.5714,
+          "gcd": 0.5455,
+          "linear_search": 0.375,
+          "max_value": 0.5283,
+          "reverse_array": 0.3
+        }
+      },
+      "irprint_hybrid": {
+        "mean_positive": 0.5663456972844585,
+        "mean_negative": 0.20826014328681192,
+        "gap": 0.3580855539976466,
+        "top1_accuracy": 0.9,
+        "auc": 0.9322222222222222,
+        "positives": {
+          "array_sum": 0.6419,
+          "binary_search": 0.3373,
+          "bubble_sort": 0.3518,
+          "count_primes": 0.9,
+          "factorial": 0.8543,
+          "fibonacci": 0.6571,
+          "gcd": 0.6273,
+          "linear_search": 0.4312,
+          "max_value": 0.6075,
+          "reverse_array": 0.255
+        }
+      }
+    },
+    "5": {
+      "token_baseline": {
+        "mean_positive": 0.1767068313701174,
+        "mean_negative": 0.011368689028170913,
+        "gap": 0.16533814234194646,
+        "top1_accuracy": 1.0,
+        "auc": 0.9627777777777777,
+        "positives": {
+          "array_sum": 0.0682,
+          "binary_search": 0.3068,
+          "bubble_sort": 0.3529,
+          "count_primes": 0.0317,
+          "factorial": 0.0533,
+          "fibonacci": 0.1778,
+          "gcd": 0.2769,
+          "linear_search": 0.0417,
+          "max_value": 0.1818,
+          "reverse_array": 0.2759
+        }
+      },
+      "irprint_dice": {
+        "mean_positive": 0.3771028074462685,
+        "mean_negative": 0.10895458286406869,
+        "gap": 0.26814822458219983,
+        "top1_accuracy": 0.9,
+        "auc": 0.9416666666666667,
+        "positives": {
+          "array_sum": 0.3902,
+          "binary_search": 0.2222,
+          "bubble_sort": 0.2062,
+          "count_primes": 0.6494,
+          "factorial": 0.6061,
+          "fibonacci": 0.381,
+          "gcd": 0.5161,
+          "linear_search": 0.2449,
+          "max_value": 0.3704,
+          "reverse_array": 0.1846
+        }
+      },
+      "irprint_hybrid": {
+        "mean_positive": 0.4281297670247472,
+        "mean_negative": 0.10654466839477537,
+        "gap": 0.3215850986299718,
+        "top1_accuracy": 0.9,
+        "auc": 0.945,
+        "positives": {
+          "array_sum": 0.4488,
+          "binary_search": 0.2556,
+          "bubble_sort": 0.2371,
+          "count_primes": 0.7468,
+          "factorial": 0.697,
+          "fibonacci": 0.4381,
+          "gcd": 0.5935,
+          "linear_search": 0.2816,
+          "max_value": 0.4259,
+          "reverse_array": 0.1569
+        }
+      }
+    }
+  }
+}
