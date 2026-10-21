@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "irprint"
+version = "1.0.0"
+description = "Language-agnostic, optimization-robust code plagiarism detection via LLVM IR birthmarking"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.1",
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "jinja2>=3.1",
+    "python-multipart>=0.0.9",
+    "sqlalchemy>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "httpx>=0.27"]
+
+[project.scripts]
+irprint = "irprint.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["irprint*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
