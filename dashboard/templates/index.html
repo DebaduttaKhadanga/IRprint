@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IRprint Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <h1><a href="/">IRprint</a></h1>
+  <p>Language-agnostic plagiarism detection on LLVM IR birthmarks</p>
+</header>
+<main>
+
+  <!-- FUNCTIONALITY 8: batch upload (POST /scan) -->
+  <section>
+    <h2>Scan submissions</h2>
+    <form class="inline" action="/scan" method="post" enctype="multipart/form-data">
+      <input type="file" name="files" multiple accept=".c,.cpp,.cc,.cxx,.rs,.swift" required>
+      <label>k <input type="number" name="k" value="3" min="2" max="5"></label>
+      <label>threshold <input type="number" name="threshold" value="0.80" min="0" max="1" step="0.05"></label>
+      <input type="submit" value="Upload &amp; scan">
+    </form>
+    <form class="inline" action="/scan/demo" method="post" style="margin-top:10px">
+      <button class="secondary" type="submit">Scan built-in demo class</button>
+      <span class="muted">C and Rust submissions bundled in experiments/corpus/class_demo</span>
+    </form>
+  </section>
+
+  {% if scan %}
+  <!-- FUNCTIONALITY 8: class-wide similarity heat-map -->
+  <section>
+    <h2>Class-wide similarity heat-map</h2>
+    <p class="muted">Each cell is the best hybrid score between any function of the row file and any function of the column file. Click a cell to inspect the pair.</p>
+    <div class="heatmap-wrap">
+      <canvas id="heatmap"></canvas>
+      <div id="heatmap-tooltip"></div>
+    </div>
+    <div class="legend">
+      <span>0.0</span><canvas class="ramp" id="heatmap-legend" width="200" height="10"></canvas><span>1.0</span>
+      <span>· outlined cells are at or above the flag threshold ({{ "%.2f"|format(scan.threshold) }})</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Flagged pairs ({{ scan.flagged|length }})</h2>
+    {% if scan.flagged %}
+    <table>
+      <thead><tr>
+        <th>File A : function</th><th>File B : function</th>
+        <th class="num">Hybrid</th><th class="num">Dice</th><th class="num">Jaccard</th><th class="num">Cosine</th>
+        <th>CFG</th><th>Verdict</th>
+      </tr></thead>
+      <tbody>
+      {% for p in scan.flagged %}
+        <tr class="clickable" onclick="location.href='/pair/{{ p.id }}'">
+          <td><a href="/pair/{{ p.id }}">{{ p.file_a }}</a> : {{ p.func_a }}</td>
+          <td>{{ p.file_b }} : {{ p.func_b }}</td>
+          <td class="num"><span class="badge flag">{{ "%.3f"|format(p.hybrid_score) }}</span></td>
+          <td class="num">{{ "%.3f"|format(p.dice) }}</td>
+          <td class="num">{{ "%.3f"|format(p.jaccard) }}</td>
+          <td class="num">{{ "%.3f"|format(p.cosine) }}</td>
+          <td>{{ "match" if p.cfg_match else "differs" }}</td>
+          <td><span class="badge verdict">{{ p.instructor_verdict }}</span></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p class="muted">No pair reached the threshold.</p>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2>Submissions ({{ scan.submissions|length }})</h2>
+    <table>
+      <thead><tr><th>File</th><th>Language</th><th>Compiled</th></tr></thead>
+      <tbody>
+      {% for s in scan.submissions %}
+        <tr>
+          <td>{{ s.name }}</td><td>{{ s.language }}</td>
+          <td>{% if s.compiled %}<span class="badge ok">yes</span>{% else %}<span class="badge flag" title="{{ s.error }}">failed</span>{% endif %}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <script id="scan-data" type="application/json">{{ scan | tojson }}</script>
+  <script src="/static/heatmap.js"></script>
+  {% else %}
+  <section><p class="muted">No scans yet. Upload files or scan the built-in demo class.</p></section>
+  {% endif %}
+</main>
+</body>
+</html>

@@ -1,0 +1,414 @@
+{
+  "n_positive": 28,
+  "n_negative": 225,
+  "k": {
+    "2": {
+      "kgram": {
+        "sweep": {
+          "0.5": {
+            "resilience": 1.0,
+            "credibility": 0.022222222222222254
+          },
+          "0.55": {
+            "resilience": 1.0,
+            "credibility": 0.10222222222222221
+          },
+          "0.6": {
+            "resilience": 1.0,
+            "credibility": 0.24888888888888894
+          },
+          "0.65": {
+            "resilience": 1.0,
+            "credibility": 0.4488888888888889
+          },
+          "0.7": {
+            "resilience": 0.9285714285714286,
+            "credibility": 0.5822222222222222
+          },
+          "0.75": {
+            "resilience": 0.8214285714285714,
+            "credibility": 0.72
+          },
+          "0.8": {
+            "resilience": 0.7142857142857143,
+            "credibility": 0.84
+          },
+          "0.85": {
+            "resilience": 0.6071428571428571,
+            "credibility": 0.9422222222222222
+          },
+          "0.9": {
+            "resilience": 0.5714285714285714,
+            "credibility": 0.9733333333333334
+          }
+        },
+        "at_default": {
+          "resilience": 0.7142857142857143,
+          "credibility": 0.84
+        },
+        "best_threshold": 0.8,
+        "best": {
+          "resilience": 0.7142857142857143,
+          "credibility": 0.84
+        },
+        "auc": 0.900079365079365
+      },
+      "hybrid": {
+        "sweep": {
+          "0.5": {
+            "resilience": 1.0,
+            "credibility": 0.1777777777777778
+          },
+          "0.55": {
+            "resilience": 1.0,
+            "credibility": 0.36
+          },
+          "0.6": {
+            "resilience": 0.9642857142857143,
+            "credibility": 0.52
+          },
+          "0.65": {
+            "resilience": 0.9285714285714286,
+            "credibility": 0.6844444444444444
+          },
+          "0.7": {
+            "resilience": 0.9285714285714286,
+            "credibility": 0.7555555555555555
+          },
+          "0.75": {
+            "resilience": 0.8928571428571429,
+            "credibility": 0.8133333333333334
+          },
+          "0.8": {
+            "resilience": 0.8571428571428571,
+            "credibility": 0.8622222222222222
+          },
+          "0.85": {
+            "resilience": 0.75,
+            "credibility": 0.9066666666666666
+          },
+          "0.9": {
+            "resilience": 0.7142857142857143,
+            "credibility": 0.9333333333333333
+          }
+        },
+        "at_default": {
+          "resilience": 0.8571428571428571,
+          "credibility": 0.8622222222222222
+        },
+        "best_threshold": 0.8,
+        "best": {
+          "resilience": 0.8571428571428571,
+          "credibility": 0.8622222222222222
+        },
+        "auc": 0.9293650793650794
+      }
+    },
+    "3": {
+      "kgram": {
+        "sweep": {
+          "0.5": {
+            "resilience": 0.9285714285714286,
+            "credibility": 0.5644444444444445
+          },
+          "0.55": {
+            "resilience": 0.7857142857142857,
+            "credibility": 0.7644444444444445
+          },
+          "0.6": {
+            "resilience": 0.7142857142857143,
+            "credibility": 0.8577777777777778
+          },
+          "0.65": {
+            "resilience": 0.6428571428571429,
+            "credibility": 0.92
+          },
+          "0.7": {
+            "resilience": 0.6071428571428571,
+            "credibility": 0.9466666666666667
+          },
+          "0.75": {
+            "resilience": 0.5714285714285714,
+            "credibility": 0.9777777777777777
+          },
+          "0.8": {
+            "resilience": 0.5357142857142857,
+            "credibility": 0.9955555555555555
+          },
+          "0.85": {
+            "resilience": 0.5,
+            "credibility": 1.0
+          },
+          "0.9": {
+            "resilience": 0.35714285714285715,
+            "credibility": 1.0
+          }
+        },
+        "at_default": {
+          "resilience": 0.5357142857142857,
+          "credibility": 0.9955555555555555
+        },
+        "best_threshold": 0.6,
+        "best": {
+          "resilience": 0.7142857142857143,
+          "credibility": 0.8577777777777778
+        },
+        "auc": 0.8887301587301587
+      },
+      "hybrid": {
+        "sweep": {
+          "0.5": {
+            "resilience": 0.9285714285714286,
+            "credibility": 0.7555555555555555
+          },
+          "0.55": {
+            "resilience": 0.8571428571428571,
+            "credibility": 0.8177777777777777
+          },
+          "0.6": {
+            "resilience": 0.8214285714285714,
+            "credibility": 0.8711111111111112
+          },
+          "0.65": {
+            "resilience": 0.75,
+            "credibility": 0.9288888888888889
+          },
+          "0.7": {
+            "resilience": 0.6785714285714286,
+            "credibility": 0.9466666666666667
+          },
+          "0.75": {
+            "resilience": 0.6071428571428571,
+            "credibility": 0.9733333333333334
+          },
+          "0.8": {
+            "resilience": 0.5714285714285714,
+            "credibility": 0.9733333333333334
+          },
+          "0.85": {
+            "resilience": 0.5357142857142857,
+            "credibility": 0.9777777777777777
+          },
+          "0.9": {
+            "resilience": 0.5,
+            "credibility": 0.9866666666666667
+          }
+        },
+        "at_default": {
+          "resilience": 0.5714285714285714,
+          "credibility": 0.9733333333333334
+        },
+        "best_threshold": 0.6,
+        "best": {
+          "resilience": 0.8214285714285714,
+          "credibility": 0.8711111111111112
+        },
+        "auc": 0.9241269841269841
+      }
+    },
+    "4": {
+      "kgram": {
+        "sweep": {
+          "0.5": {
+            "resilience": 0.7142857142857143,
+            "credibility": 0.92
+          },
+          "0.55": {
+            "resilience": 0.6071428571428571,
+            "credibility": 0.9644444444444444
+          },
+          "0.6": {
+            "resilience": 0.5357142857142857,
+            "credibility": 0.9777777777777777
+          },
+          "0.65": {
+            "resilience": 0.5357142857142857,
+            "credibility": 0.9822222222222222
+          },
+          "0.7": {
+            "resilience": 0.5,
+            "credibility": 0.9955555555555555
+          },
+          "0.75": {
+            "resilience": 0.4642857142857143,
+            "credibility": 1.0
+          },
+          "0.8": {
+            "resilience": 0.35714285714285715,
+            "credibility": 1.0
+          },
+          "0.85": {
+            "resilience": 0.32142857142857145,
+            "credibility": 1.0
+          },
+          "0.9": {
+            "resilience": 0.2857142857142857,
+            "credibility": 1.0
+          }
+        },
+        "at_default": {
+          "resilience": 0.35714285714285715,
+          "credibility": 1.0
+        },
+        "best_threshold": 0.5,
+        "best": {
+          "resilience": 0.7142857142857143,
+          "credibility": 0.92
+        },
+        "auc": 0.9027777777777778
+      },
+      "hybrid": {
+        "sweep": {
+          "0.5": {
+            "resilience": 0.7142857142857143,
+            "credibility": 0.9377777777777778
+          },
+          "0.55": {
+            "resilience": 0.7142857142857143,
+            "credibility": 0.96
+          },
+          "0.6": {
+            "resilience": 0.6428571428571429,
+            "credibility": 0.9688888888888889
+          },
+          "0.65": {
+            "resilience": 0.5357142857142857,
+            "credibility": 0.9777777777777777
+          },
+          "0.7": {
+            "resilience": 0.5,
+            "credibility": 0.9822222222222222
+          },
+          "0.75": {
+            "resilience": 0.5,
+            "credibility": 0.9822222222222222
+          },
+          "0.8": {
+            "resilience": 0.5,
+            "credibility": 0.9955555555555555
+          },
+          "0.85": {
+            "resilience": 0.5,
+            "credibility": 1.0
+          },
+          "0.9": {
+            "resilience": 0.39285714285714285,
+            "credibility": 1.0
+          }
+        },
+        "at_default": {
+          "resilience": 0.5,
+          "credibility": 0.9955555555555555
+        },
+        "best_threshold": 0.55,
+        "best": {
+          "resilience": 0.7142857142857143,
+          "credibility": 0.96
+        },
+        "auc": 0.9267460317460318
+      }
+    },
+    "5": {
+      "kgram": {
+        "sweep": {
+          "0.5": {
+            "resilience": 0.5357142857142857,
+            "credibility": 0.9733333333333334
+          },
+          "0.55": {
+            "resilience": 0.5,
+            "credibility": 0.9866666666666667
+          },
+          "0.6": {
+            "resilience": 0.5,
+            "credibility": 1.0
+          },
+          "0.65": {
+            "resilience": 0.42857142857142855,
+            "credibility": 1.0
+          },
+          "0.7": {
+            "resilience": 0.39285714285714285,
+            "credibility": 1.0
+          },
+          "0.75": {
+            "resilience": 0.32142857142857145,
+            "credibility": 1.0
+          },
+          "0.8": {
+            "resilience": 0.32142857142857145,
+            "credibility": 1.0
+          },
+          "0.85": {
+            "resilience": 0.2857142857142857,
+            "credibility": 1.0
+          },
+          "0.9": {
+            "resilience": 0.25,
+            "credibility": 1.0
+          }
+        },
+        "at_default": {
+          "resilience": 0.32142857142857145,
+          "credibility": 1.0
+        },
+        "best_threshold": 0.5,
+        "best": {
+          "resilience": 0.5357142857142857,
+          "credibility": 0.9733333333333334
+        },
+        "auc": 0.9119047619047619
+      },
+      "hybrid": {
+        "sweep": {
+          "0.5": {
+            "resilience": 0.5357142857142857,
+            "credibility": 0.9733333333333334
+          },
+          "0.55": {
+            "resilience": 0.5357142857142857,
+            "credibility": 0.9777777777777777
+          },
+          "0.6": {
+            "resilience": 0.5,
+            "credibility": 0.9822222222222222
+          },
+          "0.65": {
+            "resilience": 0.5,
+            "credibility": 0.9866666666666667
+          },
+          "0.7": {
+            "resilience": 0.4642857142857143,
+            "credibility": 1.0
+          },
+          "0.75": {
+            "resilience": 0.42857142857142855,
+            "credibility": 1.0
+          },
+          "0.8": {
+            "resilience": 0.39285714285714285,
+            "credibility": 1.0
+          },
+          "0.85": {
+            "resilience": 0.32142857142857145,
+            "credibility": 1.0
+          },
+          "0.9": {
+            "resilience": 0.32142857142857145,
+            "credibility": 1.0
+          }
+        },
+        "at_default": {
+          "resilience": 0.39285714285714285,
+          "credibility": 1.0
+        },
+        "best_threshold": 0.55,
+        "best": {
+          "resilience": 0.5357142857142857,
+          "credibility": 0.9777777777777777
+        },
+        "auc": 0.9315079365079365
+      }
+    }
+  }
+}

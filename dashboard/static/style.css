@@ -1,0 +1,111 @@
+:root {
+  --surface-0: #f4f4f1;
+  --surface-1: #fcfcfb;
+  --border: #dddcd6;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #7a7974;
+  --accent: #2a78d6;
+  --flag-bg: #fde8e1;
+  --flag-text: #9b2c0b;
+  --ok-text: #1d6b3a;
+  --diff-change: #fff4d6;
+  --diff-only: #e8f1fc;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface-0: #121211;
+    --surface-1: #1a1a19;
+    --border: #383835;
+    --text-primary: #f0efec;
+    --text-secondary: #c3c2b7;
+    --text-muted: #8f8e86;
+    --accent: #3987e5;
+    --flag-bg: #4a1f12;
+    --flag-text: #ffb59c;
+    --ok-text: #7fd39c;
+    --diff-change: #3b3317;
+    --diff-only: #172a42;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--surface-0);
+  color: var(--text-primary);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-1);
+}
+header h1 { margin: 0; font-size: 20px; }
+header p { margin: 4px 0 0; color: var(--text-secondary); font-size: 13px; }
+header a { color: inherit; text-decoration: none; }
+main { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
+section {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+h2 { font-size: 16px; margin: 0 0 12px; }
+.muted { color: var(--text-muted); font-size: 13px; }
+
+form.inline { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+button, input[type=submit] {
+  font: inherit; padding: 6px 14px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--accent); background: var(--accent); color: #fff;
+}
+button.secondary { background: transparent; color: var(--accent); }
+input[type=number] { width: 80px; font: inherit; padding: 4px 6px; }
+label { color: var(--text-secondary); font-size: 13px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+th { color: var(--text-secondary); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr.clickable { cursor: pointer; }
+tr.clickable:hover { background: var(--surface-0); }
+a { color: var(--accent); }
+
+.badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px; }
+.badge.flag { background: var(--flag-bg); color: var(--flag-text); }
+.badge.ok { color: var(--ok-text); border: 1px solid currentColor; }
+.badge.verdict { border: 1px solid var(--border); color: var(--text-secondary); }
+
+/* heat-map */
+.heatmap-wrap { position: relative; overflow-x: auto; }
+#heatmap { display: block; }
+#heatmap-tooltip {
+  position: absolute; pointer-events: none; display: none;
+  background: var(--surface-1); color: var(--text-primary);
+  border: 1px solid var(--border); border-radius: 6px;
+  padding: 6px 10px; font-size: 13px; box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  white-space: nowrap;
+}
+.legend { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 12px; color: var(--text-secondary); }
+.legend .ramp { width: 200px; height: 10px; border-radius: 2px; }
+
+/* pair detail */
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+.metric { border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px; }
+.metric .label { font-size: 12px; color: var(--text-secondary); }
+.metric .value { font-size: 22px; font-variant-numeric: tabular-nums; }
+.diff { width: 100%; overflow-x: auto; }
+.diff table { font: 12px/1.45 var(--mono); table-layout: fixed; }
+.diff td { white-space: pre; border-bottom: none; padding: 0 8px; vertical-align: top; overflow: hidden; text-overflow: ellipsis; }
+.diff tr.replace td { background: var(--diff-change); }
+.diff tr.delete td.left, .diff tr.insert td.right { background: var(--diff-only); }
+.diff th { position: sticky; top: 0; background: var(--surface-1); }
+.verdict-form { display: flex; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 640px) {
+  header { padding: 12px 16px; }
+  section { padding: 12px; }
+  .diff table { font-size: 11px; }
+}
